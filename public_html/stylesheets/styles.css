@@ -12,14 +12,60 @@ and open the template in the editor.
     GENERAL STYLING
 **********************/
 body{
-    background-color: #E6EBE0;
-    margin-left: 15%;
-    margin-right: 15%;
+    background-color: #EFEFF0;
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.main {
+    margin-top: 70px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
-img {
+.main img {
     width: 150px;
     height: 150px;
+}
+
+.main img:hover {
+    width: 200px;
+    height: 200px;
+    transition: all 100ms;
+    cursor: pointer;
+}
+
+/***************************
+    NAVIGATION BAR STYLING
+****************************/
+.navbar{
+    overflow: hidden;
+    background-color: #6B5E62;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar a{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background: #D62246;
+}
+
+/***************************
+    TABLES STYLING
+****************************/
+table{
+    width: 100%;
+}
+
+table tr td{
+    border: 1px solid black;
 }
