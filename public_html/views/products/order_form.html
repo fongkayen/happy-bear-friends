@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/happy-bear-friends/stylesheets/styles.css">
+    </head>
+    <body>
+        <div>
+            <h3>Order Form</h3>
+            <form>
+                * Required Fields
+                <fieldset>
+                    <legend>PRODUCT</legend>
+                    <input type="text" name="productid" placeholder="Product ID*"><br/>
+                    <input type="text" name="quantity" placeholder="Quantity*"><br/>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>SHIPPING ADDRESS</legend>
+                    <input type="text" name="firstname" placeholder="First Name*"><br/>
+                    <input type="text" name="lastname" placeholder="Last Name*"><br/>
+                    <input type="text" name="address1" placeholder="Address 1 (Street Address)*"><br/>
+                    <input type="text" name="address2" placeholder="Address 2 (Apt #, Suite, Floor, etc.)"><br/>
+                    <input type="text" name="state" placeholder="State*"><br/>
+                    <input type="text" name="city" placeholder="City*"><br/>
+                    <input type="text" name="zipcode" placeholder="Zip Code*"><br/>
+                    <input type="text" name="phone" placeholder="Phone*"><br/>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>DELIVERY METHOD</legend>
+                    <input type="radio" name="standard" value="standard" checked>Standard (3-7 Business Days)<br/>
+                    <input type="radio" name="twoday" value="twoday">Two Day (2-3 Business Days)<br/>
+                    <input type="radio" name="express" value="express">Express (1-2 Business Days)<br/>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>PAYMENT</legend>
+                    <input type="text" name="nameoncard" placeholder="Name on Card*"><br/>
+                    <input type="text" name="cardnumber" placeholder="Card Number*"><br/>
+                    Expiration Date<br/>
+                    <select name="expr-month">
+                        <option value="january">January</option>
+                        <option value="february">February</option>
+                        <option value="march">March</option>
+                        <option value="april">April</option>
+                        <option value="may">May</option>
+                        <option value="june">June</option>
+                        <option value="july">July</option>
+                        <option value="august">August</option>
+                        <option value="september">September</option>
+                        <option value="october">October</option>
+                        <option value="november">November</option>
+                        <option value="december">December</option>
+                    </select>
+                    <input type="text" name="year" placeholder="Year"><br/>
+                    <input type="text" name="securitycode" placeholder="Security Code*"><br/>
+                </fieldset>
+                
+                <input type="submit" name="Buy">
+            </form>
+        
+        </div>
+    </body>
+</html>
