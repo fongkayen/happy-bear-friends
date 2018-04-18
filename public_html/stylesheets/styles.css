@@ -27,13 +27,6 @@ body{
     height: 150px;
 }
 
-.main img:hover {
-    width: 200px;
-    height: 200px;
-    transition: all 100ms;
-    cursor: pointer;
-}
-
 /***************************
     NAVIGATION BAR STYLING
 ****************************/
@@ -64,8 +57,36 @@ body{
 ****************************/
 table{
     width: 100%;
+    table-layout: fixed;
 }
 
 table tr td{
     border: 1px solid black;
+}
+
+/***************************
+    PRODUCTS TABLE STYLING
+****************************/
+.products-table img:hover {
+    width: 200px;
+    height: 200px;
+    transition: all 100ms;
+    cursor: pointer;
+}
+
+/*********************************
+    DETAILED DESCRIPTION STYLING
+**********************************/
+.product-pic img{
+    width: 300px;
+    height: 300px;
+}
+
+.more-product-pic img{
+    width: 50px;
+    height: 50px;
+}
+
+#main-product-pic:hover{
+    
 }
