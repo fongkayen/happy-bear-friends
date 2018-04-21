@@ -60,10 +60,27 @@ table{
     table-layout: fixed;
 }
 
-table tr td{
+.products-table tr td{
     border: 1px solid black;
 }
 
+.det-desc{
+    max-width: 70%;
+}
+
+.in-stock{
+    color: green;
+}
+
+.desc-left{
+    width: 10%;
+    font-weight: bold;
+    vertical-align: top;
+}
+
+.desc-right{
+    vertical-align: top;
+}
 /***************************
     PRODUCTS TABLE STYLING
 ****************************/
@@ -82,11 +99,22 @@ table tr td{
     height: 300px;
 }
 
+.product-pic img:hover{
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
 .more-product-pic img{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
     width: 50px;
     height: 50px;
 }
 
-#main-product-pic:hover{
-    
+.more-product-pic img:hover{
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.animal-desc{
+    font-style: italic;
 }
