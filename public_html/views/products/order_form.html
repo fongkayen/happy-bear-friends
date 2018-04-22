@@ -20,40 +20,40 @@ and open the template in the editor.
         
         <div class="main">
             <h3>Order Form</h3>
-            <form onsubmit="mailClient()">
+            <form onSubmit="mailClient()">
                 * Required Fields
                 <fieldset>
                     <legend>PRODUCT</legend>
-                    <input type="text" name="productid" placeholder="Product ID*" required pattern="[0-9]{2}"><br/>
-                    <input type="text" name="quantity" placeholder="Quantity*" required pattern="[0-9]{2}"><br/>
+                    <input type="text" id="productid" placeholder="Product ID*"required ><br/> <!-- required pattern="[0-9]{2}"><br/>-->
+                    <input type="text" id="quantity" placeholder="Quantity*" required><br/> <!-- required pattern="[0-9]{2}"><br/> -->
                 </fieldset>
                 
                 <fieldset>
                     <legend>SHIPPING ADDRESS</legend>
-                    <input type="text" name="firstname" placeholder="First Name*" required><br/>
-                    <input type="text" name="lastname" placeholder="Last Name*" required><br/>
-                    <input type="text" name="email" placeholder="Email*" required pattern="[0-9a-zA-Z._-]+[@][a-zA-Z_]+[.][a-zA-Z]{2,3}"><br/>
-                    <input type="text" name="address1" placeholder="Address 1 (Street Address)*" required><br/>
-                    <input type="text" name="address2" placeholder="Address 2 (Apt #, Suite, Floor, etc.)"><br/>
-                    <input type="text" name="state" placeholder="State*" required pattern="[a-zA-Z]+"><br/>
-                    <input type="text" name="city" placeholder="City*" required pattern="[a-zA-Z]+"><br/>
-                    <input type="text" name="zipcode" placeholder="Zip Code*" required pattern="[0-9]{5}"><br/>
-                    <input type="text" name="phone" placeholder="Phone*" required pattern="[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}"><br/>
+                    <input type="text" id="firstname" placeholder="First Name*" required><br/> <!-- required><br/>-->
+                    <input type="text" id="lastname" placeholder="Last Name*" required><br/> <!-- required><br/>-->
+                    <input type="text" id="email" placeholder="Email*"required><br/> <!--  required pattern="[0-9a-zA-Z._-]+[@][a-zA-Z_]+[.][a-zA-Z]{2,3}"><br/>-->
+                    <input type="text" id="address1" placeholder="Address 1 (Street Address)*" required><br/> <!-- required><br/>-->
+                    <input type="text" id="address2" placeholder="Address 2 (Apt #, Suite, Floor, etc.)"required><br/>
+                    <input type="text" id="state" placeholder="State*" required><br/> <!-- required pattern="[a-zA-Z]+"><br/> -->
+                    <input type="text" id="city" placeholder="City*" required><br/> <!-- required pattern="[a-zA-Z]+"><br/> -->
+                    <input type="text" id="zipcode" placeholder="Zip Code*" required><br/> <!-- required pattern="[0-9]{5}"><br/>-->
+                    <input type="text" id="phone" placeholder="Phone*" required><br/> <!--  required pattern="[0-9]{3}[ -][0-9]{3}[ -][0-9]{4}"><br/> -->
                 </fieldset>
                 
                 <fieldset>
                     <legend>DELIVERY METHOD</legend>
-                    <input type="radio" name="shipping" value="standard" checked>Standard (3-7 Business Days)<br/>
-                    <input type="radio" name="shipping" value="twoday">Two Day (2-3 Business Days)<br/>
-                    <input type="radio" name="shipping" value="express">Express (1-2 Business Days)<br/>
+                    <input type="radio" id="shipping" value="standard" checked>Standard (3-7 Business Days)<br/>
+                    <input type="radio" id="shipping" value="twoday">Two Day (2-3 Business Days)<br/>
+                    <input type="radio" id="shipping" value="express">Express (1-2 Business Days)<br/>
                 </fieldset>
                 
                 <fieldset>
                     <legend>PAYMENT</legend>
-                    <input type="text" name="nameoncard" placeholder="Name on Card*" required pattern="[a-zA-Z]+[ ][a-zA-Z]+"><br/>
-                    <input type="text" name="cardnumber" placeholder="Card Number*" required pattern="[0-9]{16}"><br/>
+                    <input type="text" id="nameoncard" placeholder="Name on Card*" required ><br/> <!-- required pattern="[a-zA-Z]+[ ][a-zA-Z]+"><br/> -->
+                    <input type="text" id="cardnumber" placeholder="Card Number*" required><br/> <!-- required pattern="[0-9]{16}"><br/> -->
                     Expiration Date 
-                    <select name="expr-month" required>
+                    <select id="expr-month" required>
                         <option selected="selected" value="january">January</option>
                         <option value="february">February</option>
                         <option value="march">March</option>
@@ -67,41 +67,45 @@ and open the template in the editor.
                         <option value="november">November</option>
                         <option value="december">December</option>
                     </select>
-                    <input type="text" name="year" placeholder="Year*" required pattern="[0-9]{4}"><br/>
-                    <input type="text" name="securitycode" placeholder="Security Code*" required pattern="[0-9]{3}"><br/>
+                    <input type="text" id="year" placeholder="Year*" required><br/> <!-- required pattern="[0-9]{4}"><br/> -->
+                    <input type="text" id="securitycode" placeholder="Security Code*" required ><br/> <!-- required pattern="[0-9]{3}"><br/>-->
                 </fieldset>
                 <input type="submit" name="Buy">
             </form>
+            
+           <!-- "mailto:mail@example.org?subject=Mail request&body="+body; -->
+            <!--"mailto:" + email + "?subject=" + title + "request&body=" + body; -->
             <script>
                     function mailClient()
                     {
-                        var email = document.getElementsByName("email").value;
-                        window.location.href = "mailto:" + email;
-                        
                         var title = "Happy Bear Friends: Purchase";
+                        var email = document.getElementById("email").value;
                         var body =
                         "Hello, \n" +
-                        document.getElementsByName("firstname").value + " " + document.getElementsByName("lastname").value + "\n\n" +
-                        "Thank you for your order we are getting it ready.\n" +
-                        "Your order information is as follows:" +
-                        "Product no.: " + document.getElementsByName("productid").value + "\n" +
-                        "Quantity: " + document.getElementsByName("quantity").value + "\n" +
-                        "Your shipping address is as follows: \n" +
-                        "Shipping Address: \n" + 
-                        document.getElementsByName("firstname").value + " " + document.getElementsByName("lastname").value + "\n" +
-                        document.getElementsByName("email").value + "\n" +
-                        document.getElementsByName("address1").value + ", " + document.getElementsByName("address2").value + ", " +
-                        document.getElementsByName("city").value + ", " + document.getElementsByName("state").value + " " + 
-                        document.getElementsByName("zipcode").value + "\n" +
-                        document.getElementsByName("phone").value + "\n" + 
-                        "Shipping type: " + document.getElementsByName("shipping").value + "\n\n" +
-                        "Your payment information is as follows: \n" +
-                        document.getElementsByName("nameoncard").value + "\n" +
-                        document.getElementsByName("cardnumber").value + "\n" +
-                        document.getElementsByName("expr-month").value + " " + document.getElementsByName("year").value + "\n" +
-                        document.getElementsByName("securitycode").value;
+                        document.getElementById("firstname").value + " " + document.getElementById("lastname").value + "\n\n" +
+                        " Thank you for your order we are getting it ready.\n" +
+                        " Your order information is as follows:" +
+                        " Product no.: " + document.getElementById("productid").value + "\n" +
+                        " Quantity: " + document.getElementById("quantity").value + "\n" +
+                        " Your shipping address is as follows: \n" +
+                        " Shipping Address: \n" + 
+                        document.getElementById("firstname").value + " " + document.getElementById("lastname").value + "\n" +
+                        document.getElementById("email").value + "\n" +
+                        document.getElementById("address1").value + ", " + document.getElementById("address2").value + ", " +
+                        document.getElementById("city").value + ", " + document.getElementById("state").value + " " + 
+                        document.getElementById("zipcode").value + "\n" +
+                        document.getElementById("phone").value + "\n" + 
+                        " Shipping type: " + document.getElementById("shipping").value + "\n\n" +
+                        " Your payment information is as follows: \n" +
+                        document.getElementById("nameoncard").value + "\n" +
+                        document.getElementById("cardnumber").value + "\n" +
+                        document.getElementById("expr-month").value + " " + document.getElementById("year").value + "\n" +
+                        document.getElementById("securitycode").value;
+                
+                        window.location.href = "mailto:"+email+"?subject="+title+"&body="+body;
               
                         alert("Thank you for shopping with us!");
+                        
                     }
                 </script>
         </div>
